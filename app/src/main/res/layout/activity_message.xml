@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".messageActivity">
+
+    <RelativeLayout
+        android:id="@+id/message_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/email_To"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_edittext"
+            android:hint="To:"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/email_Subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_To"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_edittext"
+            android:hint="Subject:"
+            android:inputType="textEmailSubject"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/email_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_Subject"
+            android:layout_marginTop="10dp"
+            android:height="200dp"
+            android:background="@drawable/selector_edittext"
+            android:gravity="top|left"
+            android:hint="Message:"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:scrollbars="vertical"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gesture_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/assist"
+        android:layout_below="@+id/message_box" />
+
+    <Button
+        android:id="@+id/assist"
+        android:background="@color/blue_royal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Assistant"
+        android:fontFamily="@font/quicksand"
+        android:padding="20dp"
+        android:textSize="38sp"/>
+
+    <Button
+        android:id="@+id/edit_assist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/royal_red"
+        android:fontFamily="@font/quicksand"
+        android:padding="30dp"
+        android:text="EDITOR"
+        android:textSize="38sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

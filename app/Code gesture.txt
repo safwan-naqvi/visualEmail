@@ -1,0 +1,59 @@
+//Making Constructor
+        public SwiperListener(View view) {
+            //Required Variables init
+            int threshold = 100;
+            int velocity_threshold = 100;
+
+            //Init Simple Gesture Listener
+            GestureDetector.SimpleOnGestureListener listener = new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onDown(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                    float xDiff = e2.getX() - e1.getX();
+                    float yDiff = e2.getY() - e1.getY();
+
+                    try {
+                        //Checking conditions
+                        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                            //Checking Conditions
+                            if (Math.abs(xDiff) > threshold
+                                    && Math.abs(velocityX) > velocity_threshold) {
+                                //When X differ is greater than threshold and X velocity is greater than velocity threshold
+                                if (xDiff > 0) {
+                                    Toast.makeText(getApplicationContext(), "Right", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getApplicationContext(), "Left", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }else{
+                            if (Math.abs(yDiff) > threshold
+                                    && Math.abs(velocityY) > velocity_threshold) {
+                                //When X differ is greater than threshold and X velocity is greater than velocity threshold
+                                if (yDiff > 0) {
+                                    Toast.makeText(getApplicationContext(), "Down", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getApplicationContext(), "Up", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return false;
+                }
+            };
+            gestureDetector = new GestureDetector(listener);
+            view.setOnTouchListener(this);
+
+        }
+
+        @Override
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            //return Gesture event
+            return gestureDetector.onTouchEvent(motionEvent);
+        }

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_light"
+    tools:context=".registerActivity">
+
+    <LinearLayout
+        android:id="@+id/logoArea"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logoBox"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@null"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Visual Email Application"
+            android:fontFamily="@font/slenco"
+            android:text="Visual Email"
+            android:textSize="38sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titlePage"
+        android:text="LOGIN PAGE"
+        android:layout_below="@+id/logoArea"
+        android:textSize="30sp"
+        android:fontFamily="@font/slenco"
+        android:gravity="center"
+        android:textColor="@color/blue_royal"
+        android:layout_marginTop="30dp"/>
+
+    <RelativeLayout
+        android:id="@+id/loginEntries"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/titlePage"
+        android:layout_marginTop="25dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/login_email_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_edittext"
+            android:contentDescription="Email Address Box"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/quicksand"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/login_password_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_email_l"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_edittext"
+            android:contentDescription="Email Address Box"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="10dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/quicksand"
+            android:hint="Password"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:padding="10dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gesture_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/assist"
+        android:layout_below="@+id/loginEntries" />
+
+    <Button
+        android:id="@+id/assist"
+        android:background="@color/blue_royal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Assistant"
+        android:fontFamily="@font/quicksand"
+        android:padding="20dp"
+        android:textSize="38sp"/>
+
+    <Button
+        android:id="@+id/edit_assist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/royal_red"
+        android:fontFamily="@font/quicksand"
+        android:padding="30dp"
+        android:text="EDITOR"
+        android:textSize="38sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>
